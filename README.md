@@ -242,4 +242,4 @@ For support and questions:
 
 ---
 
-**Built with ❤️ using Next.js, TypeScript, and AI**
+**Built with ❤️ using Next.js and TypeScript**
