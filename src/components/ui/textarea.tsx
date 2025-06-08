@@ -23,7 +23,6 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
 Textarea.displayName = "Textarea";
 
-// Message interface based on your ChatInterface usage
 export interface Message {
   id: string;
   content: string;

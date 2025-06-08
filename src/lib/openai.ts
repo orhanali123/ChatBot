@@ -42,7 +42,7 @@ export async function generateHTMLCSS(prompt: string): Promise<{ code: string; e
         explanation: parsed.explanation || 'Generated HTML/CSS code based on your prompt.'
       };
     } catch {
-      // If not JSON, treat as plain code
+      
       return {
         code: content,
         explanation: 'Generated HTML/CSS code based on your prompt.'
